@@ -1,0 +1,28 @@
+/* Original version only: white paper grain and outline category selection. */
+.room-panel,.room-panel.night{background:#fff;isolation:isolate}
+.room-panel::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:url("noise.svg") repeat;background-size:180px 180px;opacity:.14;mix-blend-mode:multiply}
+.room-top,.room-bottom{z-index:3}
+.tabs button{border:1px solid transparent;background:transparent}
+.tabs button.active{border-color:currentColor;background:transparent}
+/* Close-up television viewing room. */
+#tvView{width:min(1080px,94vw);max-height:94vh;padding:28px 36px;background:#fff url('noise.svg');background-blend-mode:screen;border:1px solid #d5d9cf;overflow:auto}
+#tvView::backdrop{background:#232b26b8;backdrop-filter:blur(12px)}
+#tvView[open]{animation:tvZoom .3s ease-out}
+@keyframes tvZoom{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+.tv-toolbar{display:flex;gap:18px;align-items:center;margin-bottom:24px}.tv-toolbar>div{flex:1}.tv-toolbar h2{margin:4px 0 0;font-size:26px}
+.tv-cabinet{display:grid;grid-template-columns:minmax(0,1fr) 75px;gap:22px;padding:30px;background:#85917d;border:10px solid #b4baa4;border-radius:24px;box-shadow:8px 12px 0 #65705f,0 24px 35px #3333;margin:0 10px 36px 0}
+.tv-screen{position:relative;aspect-ratio:16/9;background:#101612;border:9px solid #424d40;border-radius:26px;overflow:hidden;box-shadow:inset 0 0 20px #0008}.tv-screen video{width:100%;height:100%;object-fit:contain;display:block}.tv-screen video[hidden],#tvEmpty[hidden]{display:none}
+#tvEmpty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#edf0e5;text-align:center;padding:20px}#tvEmpty strong{font-size:24px}#tvEmpty p{color:#ccd4c5;font-size:15px}#tvEmpty button{color:#283526;background:#fff}
+.tv-hardware{display:flex;flex-direction:column;align-items:center;gap:20px;padding:12px 0}.tv-hardware span{width:46px;height:46px;border:6px solid #d2d6be;border-radius:50%;background:linear-gradient(135deg,#596652 45%,#e3e6d1 46%,#e3e6d1 52%,#596652 53%)}.tv-hardware i{flex:1;width:100%;margin-top:10px;background:repeating-linear-gradient(0deg,transparent 0 6px,#505d4e 6px 8px);border-radius:8px}
+.tv-controls{display:flex;gap:30px;align-items:end}.tv-controls label{flex:1;margin:0;font-size:14px}.tv-controls select{display:block;width:100%;padding:12px;margin-top:10px;border:1px solid #cdd3c6;border-radius:8px;background:#fff;font:inherit}.tv-controls output{float:right}.tv-controls input{padding:0;accent-color:#64765b}#tvStatus{min-height:22px;font-size:13px;color:#56664e}
+@media(max-width:700px){#tvView{padding:20px}.tv-cabinet{padding:14px;gap:10px;grid-template-columns:minmax(0,1fr) 35px;border-width:6px}.tv-hardware span{width:28px;height:28px;border-width:4px}.tv-screen{border-width:5px;border-radius:15px}.tv-controls{gap:14px}.tv-toolbar{gap:10px}#tvEmpty strong{font-size:17px}}
+@media(prefers-reduced-motion:reduce){#tvView[open]{animation:none}}
+
+.file-note-label{margin:12px 0 0}.file-note-input{font-size:14px;line-height:1.6;background:#fff}.file-card>.field-note{margin:5px 0 0}.tv-file-note{margin:0 0 26px}.tv-file-note[hidden]{display:none}.tv-file-note label{font-size:15px}.tv-file-note textarea{background:#fff;font-size:15px}.tv-note-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}.tv-note-footer span{font-size:12px;color:#727b6d}
+
+#export{border:1px solid currentColor;background:transparent;border-radius:999px}.room-actions{margin-left:auto}main{padding-bottom:28px}
+#roomReport{width:min(920px,94vw);max-height:92vh;padding:24px 42px;background:#fff;color:#263021}#roomReport::backdrop{background:#29332888;backdrop-filter:blur(6px)}.report-toolbar{display:flex;gap:12px;align-items:center;border-bottom:1px solid #dfe3d9;padding-bottom:16px}.report-toolbar>span{font-size:10px;letter-spacing:1.4px;margin-right:auto;color:#76806e}#generateReport{border-color:#68785d;background:transparent}@media(max-width:540px){#roomReport{padding:20px}.report-toolbar{flex-wrap:wrap}.report-toolbar>span{flex-basis:100%}}
+
+.topbar #generateReport{white-space:nowrap;font-size:14px;padding:11px 18px;border-radius:999px}.topbar #export{white-space:nowrap}
+
+#import{border:1px solid currentColor;border-radius:999px;padding:11px 18px;background:transparent;text-decoration:none}
